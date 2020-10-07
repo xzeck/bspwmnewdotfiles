@@ -1,0 +1,30 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x picom > /dev/null || picom &
+pgrep -x dunst > /dev/null || dunst &
+pgrep -x rofi > /dev/null || rofi &
+
+~/.config/polybar/launch.sh &
+#wal -i /home/ajay/Pictures/Trees.jpg &
+feh --bg-scale ~/Pictures/wallpaper/firewatch.jpg &
+
+bspc monitor DVI-D-0 -d 1 2 3 4 5
+bspc monitor HDMI-0 -d 6 7 8 
+
+bspc config border_width        0 
+bspc config window_gap          12
+
+bspc config split_ratio          0.55
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config normal_border_color #5500223a
+bspc config focused_border_color #b469aa
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a albert:albert border=off
