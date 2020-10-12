@@ -3,6 +3,7 @@ configuration {
     theme: "clean";
     show-icons: true;
     font: "Hack 11";
+    icon-theme: "Zafiro-icons";
 }
 
 @import "colors.rasi"

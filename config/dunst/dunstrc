@@ -31,8 +31,8 @@
     separator_color = "#ffffffaa"
 
     # Set notification padding
-    padding = 16
-    horizontal_padding = 16
+    padding = 0
+    horizontal_padding = 0
 
     # Disable frame (border)
     frame_width = 0
@@ -72,8 +72,8 @@
     format = "<b>%a</b>\n%s\n%b"
 
     # Left align the text
-    alignment = left
-
+    alignment = center
+   
     # Vertical alignment of message text and icon.
     vertical_alignment = center
 
@@ -108,7 +108,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 128
 
     # Paths to default icons.
     icon_path = /home/kai/.icons/Reversal-blue/apps/scalable:/usr/share/icons/Adwaita/256x256/legacy/
@@ -199,3 +199,9 @@
     foreground = "#ffffff"
     timeout = 0
     icon = abrt
+
+# --- Sound --- #
+
+[play_sound]
+    summary = "*"
+    scripts = ~/.config/dunst/alert.sh

@@ -2,20 +2,20 @@ configuration {
     modi: "window,run,drun";
     theme: "clean";
     show-icons: true;
-    font: "Hack 10";
+    font: "Hack Nerd Font Bold 10";
 }
 
 @import "colors.rasi"
 
 * {
-    selected-background: #d8c45d;
-    selected-foreground: black;
+    selected-background: @selected;
+    selected-foreground: @foreground-alt;
 }
 
 #window {
     width: 450px;
     height: 120px;
-    background-color: @background-solid;
+    background-color: @background;
     padding: 5px;
 }
 
@@ -23,7 +23,7 @@ configuration {
     border:  0;
     padding: 0;
     children: [listview];
-    background-color: @background-solid;
+    background-color: @background;
 }
 
 #listview {

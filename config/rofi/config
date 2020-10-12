@@ -1,5 +1,6 @@
 rofi.show: drun
 rofi.modi: window,ssh,run
-rofi.theme: .config/rofi/clean.rasi
+rofi.theme: ribbon_left_round.rasi
+rofi.opacity = 85
 rofi.blur-background = true
 rofi.show-icons = true

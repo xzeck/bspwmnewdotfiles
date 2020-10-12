@@ -16,6 +16,12 @@ offset-y = 10
 height = 36
 radius = 0.6
 
+tray-position = right
+tray-padding = 2
+tray-detached=false
+tray-offset-x = 2
+
+
 ;override-redirect = true
 wm-restack = bspwm
 
@@ -41,7 +47,7 @@ cursor-scroll = ns-resize
 type = custom/script
 interval = 200
 exec = ~/.config/scripts/updates.sh
-format-prefix = " :"
+click-left = rofi -modi "Updates:~/.config/scripts/rofi-updates.sh" -show Updates -theme slate
 format = <label>
 format-foreground = ${colors.fourth}
 
@@ -65,7 +71,7 @@ type = internal/bspwm
 pin-workspaces = false
 strip-wsnumbers = true
 index-sort = true
-enable-click = false
+enable-click = true
 enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
@@ -73,16 +79,17 @@ fuzzy-match = true
 
 ws-icon-default = "  "
 ws-icon-0 = "0;0  "
-ws-icon-1 = "1;%{T1}%{T-}  "
-ws-icon-2 = "2;%{T1}%{T-}  "
-ws-icon-3 = "3;%{T1}%{T-}  "
-ws-icon-4 = "4;%{T1}%{T-}  "
-ws-icon-5 = "5;%{T1}%{T-}  "
-ws-icon-6 = "6;%{T1}%{T-}  "
-ws-icon-7 = "7;%{T1}%{T-}  "
-ws-icon-8 = "8;7  "
-ws-icon-9 = "9;  "
-ws-icon-10 = "10;  "
+ws-icon-1 = "1;%{T1}%{T1}  "
+ws-icon-2 = "2;%{T1}%{T1}  "
+ws-icon-3 = "3;%{T1}%{T1}  "
+ws-icon-4 = "4;%{T1}%{T1}  "
+ws-icon-5 = "5;%{T1}%{T1}  "
+ws-icon-6 = "6;%{T1}ﭮ%{T1}  "
+
+;ws-icon-4 = "4;%{T2}%{T-}  "
+;ws-icon-4 = "4;%{T2}ﰍ%{T-}  "
+;ws-icon-9 = "9;  "
+;ws-icon-10 = "10;  "
 
 format = <label-state>
 
@@ -129,12 +136,14 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-underline = #9f78e1
-label-connected = "直"
+;label-connected = "直"
+label-connected = ""
 label-connected-foreground = ${colors.primary}
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = 睊
+;label-disconnected = 睊
+label-disconnected = ""
 label-disconnected-foreground = ${colors.alert}
 
 ; a = worst
@@ -150,8 +159,8 @@ type = internal/date
 interval = 1
 
 date =
-date-alt = "%b %d, %Y  "
-time = "%I:%M"
+date-alt = "%b %d, %Y - %a - "
+time = "%I:%M:%S"
 time-alt = "%H:%M:%S"
 
 format-prefix-foreground = ${colors.foreground}
@@ -172,7 +181,7 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 label-muted = ﱝ
-label-muted-foreground = ${colors.secondary}
+label-muted-foreground = ${colors.alert}
 
 
 [module/battery]
@@ -223,7 +232,7 @@ format-prefix = " "
 type = internal/memory
 interval = 2
 format = <label>
-label = %percentage_used%
+label = %gb_used%
 format-prefix = " "
 
 
